@@ -1,1 +1,38 @@
 
+. What is Task?
+Task represents an operation that may complete in the future.
+
+Example:
+public Task GetData()
+{
+    return Task.Delay(3000);
+}
+
+
+Here, the task completes after 3 seconds.
+2. What is async?
+async is a keyword used to make a method asynchronous and allow the use of await.
+public async Task GetData()
+{
+    await Task.Delay(3000);
+}
+
+
+3. What is await?
+await waits for an asynchronous operation to complete without blocking the thread while it waits.
+
+Example:
+public async Task<string> GetEmployee()
+{
+    var employee = await db.Employees.FirstOrDefaultAsync();
+
+    return employee.Name;
+}
+
+
+Here:
+- Task<string> means the method will eventually return a string.
+- async allows us to use await.
+- await waits for the database operation to complete without blocking the thread.
+Interview-ready answer
+“Task represents an asynchronous operation. The async keyword allows us to write asynchronous methods, and await is used to wait for an asynchronous operation to complete without blocking the thread. We use async and await in .NET Core Web APIs to improve scalability, especially during database and network operations.”
