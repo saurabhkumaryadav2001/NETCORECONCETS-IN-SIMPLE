@@ -1,0 +1,62 @@
+Task vs Thread in C#
+Imagine you are working in a restaurant.
+- Thread = A waiter who performs work.
+- Task = An order/work that needs to be completed.
+One waiter can handle multiple orders over time. Similarly, a thread can execute multiple tasks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6
+
+
+
+
+
+
+
+
+
+
+Simple code example
+// Task
+Task.Run(() =>
+{
+    Console.WriteLine("Task is running");
+});
+
+// Thread
+Thread t = new Thread(() =>
+{
+    Console.WriteLine("Thread is running");
+});
+
+t.Start();
+
+
+Difference
+Task	Thread
+Represents an operation	Represents an actual execution thread
+Managed by Task Scheduler	More direct control over execution
+Supports async/await	Does not directly support async/await
+Usually preferred for application-level asynchronous work	Used when direct thread control is needed
+
+Interview answer:
+
+"Task represents work that needs to be executed, whereas Thread is an actual execution unit that executes the work. Task is generally preferred in modern .NET applications because it supports async/await and is managed efficiently by the Task Scheduler."
