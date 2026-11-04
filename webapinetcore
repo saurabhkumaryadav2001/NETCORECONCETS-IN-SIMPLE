@@ -1,0 +1,22 @@
+Question 16 · ASP.NET Core Web API
+What is the difference between GET, POST, PUT, PATCH, and DELETE?
+
+Frequently asked in 2-year .NET developer interviews.
+
+First understand:
+HTTP Method	Purpose
+GET	Retrieve data
+POST	Create new record
+PUT	Update complete record
+PATCH	Update partially
+DELETE	Delete record
+
+Example: Employee API
+GET    /api/employee/1
+POST   /api/employee
+PUT    /api/employee/1
+PATCH  /api/employee/1
+DELETE /api/employee/1
+
+
+Interview-ready answer
