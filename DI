@@ -1,0 +1,9 @@
+Dependency Injection is a design pattern used to achieve loose coupling between classes.
+
+Instead of creating dependency objects inside a class, we inject those dependencies through constructors or other injection methods.
+
+In .NET Core, we have three DI lifetimes:
+1. Transient: A new instance is created every time the service is requested.
+2. Scoped: A single instance is created per HTTP request and reused within that request.
+3. Singleton: Only one instance is created and shared throughout the application's lifetime.
+We use DI to improve maintainability, testability, and loose coupling.”
