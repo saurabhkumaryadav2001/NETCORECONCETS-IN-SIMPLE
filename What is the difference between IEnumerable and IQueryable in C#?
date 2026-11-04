@@ -1,0 +1,22 @@
+IEnumerable:
+- Works with data in application memory.
+- Filtering and sorting generally happen in application memory when applied to an in-memory collection.
+- Commonly used with collections like List.
+IQueryable:
+- Builds an expression that can be translated into SQL by a provider like Entity Framework Core.
+- Filtering and sorting can happen in the database before retrieving results.
+- Helps avoid fetching unnecessary records.
+Example
+// IEnumerable
+IEnumerable<Employee> employees =
+    db.Employees.ToList().Where(e => e.Salary > 50000);
+
+// IQueryable
+IQueryable<Employee> employees =
+    db.Employees.Where(e => e.Salary > 50000);
+
+
+Explanation:
+- ToList() executes the query and loads records into memory.
+- In the first example, filtering happens in application memory.
+- In the second example, EF Core can translate the filter into SQL and execute it in the database.
