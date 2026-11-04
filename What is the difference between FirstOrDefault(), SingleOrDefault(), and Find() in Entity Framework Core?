@@ -1,1 +1,19 @@
 
+Correct explanation
+Method	Meaning
+FirstOrDefault()	Returns the first matching record or default/null if none exists.
+SingleOrDefault()	Returns exactly one matching record or default/null if none exists. Throws exception if multiple records match.
+Find()	Searches by primary key. First checks tracked entities in memory, then queries the database if needed.
+
+Example
+// First matching employee
+var emp = db.Employees.FirstOrDefault(e => e.DepartmentId == 10);
+
+// Exactly one employee expected
+var emp2 = db.Employees.SingleOrDefault(e => e.Id == 101);
+
+// Find employee by primary key
+var emp3 = db.Employees.Find(101);
+
+
+Interview trick: SingleOrDefault() throws an exception if more than one matching record exists.
