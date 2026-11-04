@@ -1,0 +1,40 @@
+. First understand the flow
+Suppose you want to insert an employee into SQL Server.
+var employee = new Employee
+{
+    Name = "Saurabh",
+    Salary = 50000
+};
+
+db.Employees.Add(employee);
+
+db.SaveChanges();
+
+
+What happens?
+- Add() → Tells EF Core to track this employee as a new record.
+- SaveChanges() → Executes the INSERT query in SQL Server and saves the record permanently.
+Important: Add() does not directly insert the record into the database.
+2. Difference between these methods
+Method	Meaning
+Add()	Marks entity for insertion; synchronous API
+AddAsync()	Marks entity for insertion; asynchronous API, mainly useful for special async value generators
+SaveChanges()	Saves tracked changes synchronously
+SaveChangesAsync()	Saves tracked changes asynchronously
+
+Example in .NET Core
+public async Task AddEmployee()
+{
+    var employee = new Employee
+    {
+        Name = "Saurabh",
+        Salary = 50000
+    };
+
+    await db.Employees.AddAsync(employee);
+
+    await db.SaveChangesAsync();
+}
+
+
+Interview tip: SaveChangesAsync() is generally preferred in asynchronous Web API methods because it avoids blocking the thread while database I/O is in progress.
