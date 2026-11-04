@@ -1,0 +1,8 @@
+“Authentication is the process of verifying the identity of a user. For example, validating username and password or JWT token.
+
+Authorization is the process of checking whether an authenticated user has permission to access a particular resource. For example, only Admin users can delete employee records.”
+
+
+“Authentication is the process of verifying the identity of a user. For example, validating username and password or JWT token.
+
+Authorization is the process of checking whether an authenticated user has permission to access a particular resource. For example, only Admin users can delete employee records.”
