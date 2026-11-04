@@ -1,0 +1,12 @@
+“Middleware is a component in the .NET Core request-response pipeline that processes incoming HTTP requests and outgoing HTTP responses.
+
+Each middleware can inspect, modify, or handle the request. It can also pass the request to the next middleware component.
+
+Examples include authentication, authorization, exception handling, logging, and CORS.
+
+Middleware execution depends on the order in which it is registered in Program.cs.”
+Important interview question
+What is the difference between app.Use(), app.Run(), and app.Map()?
+- app.Use() → Can call the next middleware.
+- app.Run() → Terminal middleware; does not call the next middleware.
+- app.Map() → Creates a branch in the pipeline based on a matching path.
