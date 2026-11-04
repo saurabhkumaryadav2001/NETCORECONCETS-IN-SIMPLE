@@ -1,0 +1,16 @@
+Question 14 · ASP.NET Core Web API
+What is the difference between IActionResult, ActionResult, and ActionResult<T> in .NET Core?
+
+First learn this simple example:
+[HttpGet]
+public IActionResult GetEmployee()
+{
+    return Ok("Employee found");
+}
+
+
+- IActionResult → Returns different HTTP responses like Ok(), NotFound(), BadRequest().
+- ActionResult<T> → Returns a specific data type or an HTTP response.
+- ActionResult → Base class for action results.
+Interview-ready answer
+“IActionResult is an interface used to return different HTTP responses from a controller action. ActionResult is its base implementation class, and ActionResult
