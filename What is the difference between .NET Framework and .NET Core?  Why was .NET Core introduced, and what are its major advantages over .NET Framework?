@@ -1,0 +1,109 @@
+.NET Framework is Microsoft's older development platform, mainly used to build Windows applications.
+
+.NET Core was introduced as a modern, lightweight, cross-platform version of .NET that can run on Windows, Linux, and macOS.
+2. Difference between .NET Framework and .NET Core
+Feature	.NET Framework	.NET Core
+Platform	Windows only	Windows, Linux, macOS
+Performance	Comparatively slower in many workloads	Generally better performance
+Open Source	Mostly proprietary historically	Open source
+Deployment	Usually requires framework installation	Supports self-contained deployment
+Microservices	Less suitable	Better support
+Docker	Limited compared to modern .NET	Excellent support
+Web development	ASP.NET	ASP.NET Core
+Latest development	Maintenance	Modern development continues
+
+3. Why was .NET Core introduced?
+Suppose a company wants to develop a Web API.
+
+Earlier, using .NET Framework:
+- Application mainly runs on Windows.
+- Hosting generally requires Windows Server and IIS.
+- Deployment is less flexible.
+Microsoft introduced .NET Core to solve these limitations.
+
+With .NET Core:
+- We can run applications on Windows or Linux.
+- We can deploy applications inside Docker containers.
+- We can build high-performance APIs.
+- We can develop cloud-based applications and microservices.
+4. Real-life example
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Suppose we develop a Vehicle Management Web API.
+
+Using .NET Framework:
+public class VehicleController : ApiController
+{
+    public string Get()
+    {
+        return "Vehicle API";
+    }
+}
+
+
+This application typically runs on Windows with IIS.
+
+Using .NET Core:
+[ApiController]
+[Route("api/[controller]")]
+public class VehicleController : ControllerBase
+{
+    [HttpGet]
+    public string Get()
+    {
+        return "Vehicle API";
+    }
+}
+
+
+This API can run on:
+- Windows
+- Linux
+- Docker containers
+- Cloud platforms
+Both can build Web APIs, but the hosting and development capabilities are different.
+5. Interview-ready answer (2 years experience)
+You can speak this answer in your interview:
+
+Interview Answer
+
+.NET Framework is Microsoft's older development platform which mainly supports Windows applications. It is used to develop Web applications, Windows applications and Web APIs.
+
+.NET Core was introduced to overcome the limitations of .NET Framework, especially platform dependency and deployment flexibility.
+
+The major advantages of .NET Core are cross-platform support, better performance, open-source nature, lightweight deployment and better support for microservices and Docker.
+
+For example, if I develop a Web API using .NET Core, I can deploy it on both Windows and Linux servers, whereas .NET Framework applications generally require Windows.
+
+Today, modern development continues on .NET, which evolved from .NET Core.
+
+6. One important interview point
+Remember this
+.NET Core 3.1 was the last version with the name ".NET Core".
+
+After that, Microsoft introduced .NET 5, followed by .NET 6, .NET 7, .NET 8, etc.
+
+So today:
+- .NET Framework → Older Windows-based platform.
+- .NET Core → Modern cross-platform foundation.
+- .NET 5+ → Continuation of .NET Core under the name .NET.
